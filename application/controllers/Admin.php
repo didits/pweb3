@@ -6,6 +6,13 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/head');
 		$this->load->view('admin/nav');
-		$this->load->view('admin/footer');
+		$this->load->view('admin/index');
+	}
+	
+	public function tambah_berita()
+	{
+		$this->load->view('admin/head');
+		$this->load->view('admin/nav');
+		$this->load->view('admin/berita');
 	}
 }
