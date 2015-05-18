@@ -1,15 +1,3 @@
-<body>
-<header>
-	<nav>
-		<ul>
-			<li>home</li>
-			<li>donasi</li>
-			<li>Sign up</li>
-			<li>login</li>
-		</ul>
-	</nav>
-</header>
-<!-- CAROUSEL -->
 <div class="line">
 	<div id="owl-demo" class="owl-carousel owl-theme  margin-bottom">
 		<div class="item"><img src="<?php echo base_url(); ?>assets/img/940x380.jpg" alt=""></div>

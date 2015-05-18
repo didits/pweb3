@@ -66,3 +66,21 @@ nav ul li:hover {
 }
 </style>
 </head>
+<body>
+<header>
+	<div class="line" style="background-color:#FFEB3B;">
+		<nav style=" background-color:#FBC02D;">
+			<p class="nav-text">OpenEye.com</p>
+			<div class="top-nav s-12 l-11" style=" background-color:#FBC02D;">
+				<ul>
+					<li><a href="<?php base_url(); ?>home"><i class="icon-arrow_left" style="color:white"></i> </a></li>
+					<li><a>Donasi</a></li>
+				</ul>
+			</div>
+			<div class="top-nav s-12 l-1" style=" background-color:#FBC02D">
+				<ul>
+					<li><a href="<?php base_url(); ?>buat_akun"><i class="icon-signin" style="color:white"></i> Daftar</a></li<li	<li><a href="<?php base_url(); ?>buat_akun"><i class="icon-signin" style="color:white"></i> Daftar</a></li</ul>
+			</div>
+		</nav>
+	</div>
+</header>
