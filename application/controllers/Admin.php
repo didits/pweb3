@@ -46,5 +46,11 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/footer');
 		}
 		
-		
+		    public function submit_isi()
+    {
+			$judul=$this->input->post('judul');
+			$deskripsi=$this->input->post('deskripsi');
+		      $this->admin_model->onclic($judul,$deskripsi);
+    }
+				
 }

@@ -1,6 +1,6 @@
 <?php
 
-class insert_model extends CI_Model{
+class Admin_model extends CI_Model{
     function __construct() {
         parent::__construct();
         $this->load->database('default','true');
@@ -15,5 +15,9 @@ public function infp($judul,$nrp1,$nrp2,$nrp3,$nrp4,$nrp5,$nrp6,$deskripsi,$seme
 {
 	$this->db->query("CALL SP_INSERT_FP('$judul','$nrp1','$nrp2','$nrp3','$nrp4','$nrp5','$nrp6','$deskripsi','$semester','$nip','$matkul','$screenshot','$video','$demo')");
 }
+    public function onclic($judul,$deskripsi)
+    {
+	$this->db->query("CALL SP_INSERT_FP('$judul','$deskripsi')");
+    }
 }
 ?>
