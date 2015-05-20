@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Admin OpenEye.com</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url();?>assets/admin/css/bootstrap.min.css" rel="stylesheet">

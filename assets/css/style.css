@@ -17,3 +17,12 @@ h2 {
 	height:10px;
 	float:left;
 }
+.awal-judul{
+	display:block;
+	width:5px;
+	padding-top:70px;
+	background-color:#F60;
+	height:10px;
+	float:left;
+	margin-right:10px;
+}

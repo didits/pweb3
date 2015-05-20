@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/owl-carousel/owl.carousel.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/owl-carousel/owl.theme.css">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/modernizr.js"></script>
@@ -34,7 +33,7 @@ body {
 </head>
 <body>
 <header>
-	<div class="line" style="border-bottom:#900 5px solid; border-top:#900 5px solid;">
+	<div class="line">
 		<nav>
 			<p class="nav-text">NLC</p>
 			<div class="top-nav s-12 l-7">
