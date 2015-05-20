@@ -16,10 +16,10 @@ body {
 	font-size:100%;
 	margin:0;
   font-family:"Open Sans",Arial,sans-serif;
-  color:#444;
+  :#444;
   }
 h1, h2, h3, h4, h5, h6 {
-  color:#444;
+  :#444;
   font-weight: normal;
   margin:0.2em 0 0.2em 0;    
 }
@@ -31,7 +31,7 @@ h5 {font-size:1em;}
 h6 {font-size:0.9em;}    
 a, a:link, a:visited, a:hover, a:active {
 	text-decoration:none;
-  color:#444;
+  :#444;
 	}
 img {
   border:0;
@@ -190,9 +190,9 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
   background:#fff;
 }
 .aside-nav ul ul a {padding:0.625em 1.25em;}
-.aside-nav li a:link, .aside-nav li a:visited {color:#333;}
+.aside-nav li a:link, .aside-nav li a:visited {:#333;}
 .aside-nav li li a:hover, .aside-nav li li.active-item > a, .aside-nav li li.aside-sub-submenu li a:hover {
-  color:#999;
+  :#999;
   background:none;
 }
 .aside-nav > ul > li > a:hover {color:#fff;}
@@ -343,7 +343,7 @@ nav {
 }
 .top-nav li ul li ul li a {
   background:none repeat scroll 0 0 #d7d7d7;
-  color:#222;
+  :#222;
 }
 .nav-text {
   color:#fff;

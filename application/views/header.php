@@ -5,6 +5,7 @@
 <title>Openeye.com</title>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/components.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsee.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/owl-carousel/owl.carousel.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/owl-carousel/owl.theme.css">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -19,68 +20,33 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-color:#FFF;
-}
-nav {
-	display: block;
-	width: 100%;
-	height: 50px;
 	background-color: #FFF;
-	border-bottom: 1px #666666 solid;
-}
-nav ul {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 480px;
-	height: 50px;
-}
-nav ul li {
-	height: 100%;
-	text-transform: uppercase;
-	display: block;
-	float: left;
-	width: 100px;
-	text-align: center;
-	cursor: pointer;
-	line-height: 50px;
-	opacity: .8;
-}
-nav ul li:hover {
-	opacity: 1;
-	border-bottom: 2px #0099FF solid;
-}
-#head {
-	display: block;
-	width: 100%;
-	height: 100vh;
-	border-bottom: 1px #000 solid;
 }
 .news {
-	height:400px;
-	background-size:cover;
-	background-position:center;
+	height: 400px;
+	background-size: cover;
+	background-position: center;
 }
-.marg{
-	margin:10px;
+.marg {
+	margin: 10px;
 }
 </style>
 </head>
 <body>
 <header>
-	<div class="line" style="background-color:#FFEB3B;">
-		<nav style=" background-color:#FBC02D;">
-			<p class="nav-text">OpenEye.com</p>
-			<div class="top-nav s-12 l-11" style=" background-color:#FBC02D;">
+	<div class="line" style="border-bottom:#900 5px solid; border-top:#900 5px solid;">
+		<nav>
+			<p class="nav-text">NLC</p>
+			<div class="top-nav s-12 l-7">
 				<ul>
-					<li><a href="<?php base_url(); ?>home"><i class="icon-arrow_left" style="color:white"></i> </a></li>
-					<li><a>Donasi</a></li>
+					<li><a href="#"><i class="icon-home"></i> HOME</a></li>
+					<li><a href="#"><i class="icon-play"></i> DONASI</a></li>
+					<li><a href="#"><i class="icon-play"></i> FORUM</a></li>
+					<li><a href="#"><i class="icon-new_user"></i> SIGN UP</a></li>
+					<li><a href="#"><i class="icon-signin"></i> LOGIN</a></li>
 				</ul>
 			</div>
-			<div class="top-nav s-12 l-1" style=" background-color:#FBC02D">
-				<ul>
-					<li><a href="<?php base_url(); ?>buat_akun"><i class="icon-signin" style="color:white"></i> Daftar</a></li<li	<li><a href="<?php base_url(); ?>buat_akun"><i class="icon-signin" style="color:white"></i> Daftar</a></li</ul>
-			</div>
+			<div class="top-nav s-12 l-5"> </div>
 		</nav>
 	</div>
 </header>
