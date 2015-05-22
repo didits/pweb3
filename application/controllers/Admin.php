@@ -2,9 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
-	
+
 		function __construct() {
         parent::__construct();
+		$this->load->model('admin_model');
         if($this->session->userdata('role')!="2"){
 		redirect('/user/login', 'refresh');
 		}
@@ -49,10 +50,13 @@ class Admin extends CI_Controller {
 		}
 		
 		    public function submit_isi()
-    {
-			$judul=$this->input->post('judul');
-			$deskripsi=$this->input->post('deskripsi');
-		      $this->admin_model->onclic($judul,$deskripsi);
-    }
+    		{
+			//$datestring = "Year: %Y Month: %m Day: %d - %h:%i %a";
+			//$time = time();
+			//$tanggal = mdate($datestring, $time);
+			//$judul=$this->input->post('judul');
+			//$deskripsi=$this->input->post('deskripsi');	
+		    $this->admin_model->onclic();
+    		}
 				
 }

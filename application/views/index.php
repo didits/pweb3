@@ -22,7 +22,7 @@
 	<div class="s-12 l-6">
 		<div class="box news">
 		<h2 style="font-style:italic; font-weight:900"><span class="awal-judul"></span><?php echo $row->judul;?></h2>
-		<span class="span"><i class="icon-user"></i> Didit</span><span class="span"><i class="icon-calendar"></i> 13-12-2014</span>
+		<span class="span"><i class="icon-user"></i> <?php echo $row->user;?></span><span class="span"><i class="icon-calendar"></i>    <?php echo $row->tanggal;?></span>
 		<div class="divider"></div>
 			<p><div class="awal-paragraf"></div><?php echo $row->isi;?></p>
 		</div>
@@ -33,7 +33,7 @@
 	<div class="s-12 l-6">
 	<div class="box news">
 		<h2 style="font-style:italic; font-weight:900"><span class="awal-judul"></span><?php echo $row->judul;?></h2>
-		<span class="span"><i class="icon-user"></i> Didit</span><span class="span"><i class="icon-calendar"></i> 13-12-2014</span>
+		<span class="span"><i class="icon-user"></i> <?php echo $row->user;?></span><span class="span"><i class="icon-calendar"></i>      <?php echo $row->tanggal;?></span>
 		<div class="divider"></div>
 			<p><div class="awal-paragraf"></div><?php echo $row->isi;?></p>
 		</div>

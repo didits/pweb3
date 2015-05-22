@@ -29,7 +29,7 @@
                             Tambah Berita
                         </h1>
 
-                        <form role="form" action="<?php echo base_url();?>admin/submit_isi">
+                        <form role="form" action="<?php echo base_url();?>admin/submit_isi" method="post">
 
                             <div class="form-group">
                                 <label>Judul</label>
@@ -41,10 +41,16 @@
                                 <label>Isi</label>
                                 <textarea class="form-control" rows="3" name="isi"></textarea>
                             </div>
-							
+							<div class="form-group">
+                                <label>Tipe Posting</label>
+                                <select class="form-control" name="tipe_posting">
+                                    <option value="1">Penting</option>
+                                    <option value="2">Biasa</option>
+                                </select>
+                            </div>
 							<div class="form-group">
                                 <label>Gambar</label>
-                                <input type="file">
+                                <input type="file" name="userfile" size="20">
                             </div>
 
                             <button type="submit" class="btn btn-default">Submit Button</button>

@@ -54,9 +54,9 @@ class User_model extends CI_Model {
         }
     }
 	
-	public function show_berita(){
-	$query = $this->db->get('posting');
-	return $query;
+	public function show_berita($paging){
+		$query = $this->db->query("call show_berita('$paging')");
+		return $query;
 }
 }
 ?>

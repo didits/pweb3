@@ -14,7 +14,7 @@ class Welcome extends CI_Controller {
 		$data['status']='login';
 		}else 
 		$data['status']='logout';
-		$datas['h'] = $this->user_model->show_berita();
+		$datas['h'] = $this->user_model->show_berita(1);
 		$this->load->view('header');
 		$this->load->view('nav', $data);
 		$this->load->view('index', $datas);
