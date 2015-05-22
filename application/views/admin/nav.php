@@ -31,8 +31,30 @@
                         <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Berita <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo">Berita <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
+                            <li>
+                                <a href="<?php echo base_url();?>admin/tambah_berita">Tambah Berita</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url();?>admin/berita">Edit Berita</a>
+                            </li>
+                        </ul>
+                    </li>
+					<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1">Posting Penting <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo1" class="collapse">
+                            <li>
+                                <a href="<?php echo base_url();?>admin/tambah_berita">Tambah Berita</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url();?>admin/berita">Edit Berita</a>
+                            </li>
+                        </ul>
+                    </li>
+					<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2">Posting Biasa <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo2" class="collapse">
                             <li>
                                 <a href="<?php echo base_url();?>admin/tambah_berita">Tambah Berita</a>
                             </li>

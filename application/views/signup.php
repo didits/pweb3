@@ -90,6 +90,8 @@ form select[multiple="multiple"] {height: auto;}
 							<h1>&nbsp;</h1>
 							<?php echo validation_errors('<p class="error">'); ?>
 							<?php echo form_open("user/registration"); ?>
+							<h3>Username <span id="user_name_verify" class="verify" style="display:inline-block; width:16px; height:16px;"></span></h3>
+							<input type="text" id="user_name" name="user_name" value="<?php echo set_value('user_name'); ?>" required />
 					<h3>Email <span id="email_verify" class="verify" style="display:inline-block; width:16px; height:16px;"></span></h3>
 							<input type="text" id="email_address" name="email_address" value="<?php echo set_value('email_address'); ?>" required />
 							<h3>Password <span id="password_verify" class="verify" style="display:inline-block; width:16px; height:16px;"></span></h3>
@@ -114,6 +116,29 @@ form select[multiple="multiple"] {height: auto;}
 </section>
 <script type="text/javascript">
 $(document).ready(function(){
+		
+	$("#user_name").blur(function(){
+        var user_name = $("#user_name").val();
+        
+        if(user_name != 0)
+        {
+         
+            if(isValidUserName(user_name))
+            {
+               $("#user_name_verify").css({ "background-image": "url('<?php echo base_url();?>assets/images/yes.png')" });
+               //email_con=true;
+               //register_show();
+            } else {
+               
+                $("#user_name_verify").css({ "background-image": "url('<?php echo base_url();?>assets/images/no.png')" });
+            }
+ 
+        }
+        else {
+            $("#user_name_verify").css({ "background-image": "none" });
+        }
+
+    });
 		
 	$("#email_address").blur(function(){
         var email = $("#email_address").val();
@@ -175,6 +200,10 @@ $(document).ready(function(){
         }
     });
 });
+function isValidUserName(user_name) {
+ 		var pattern = new RegExp(/^[a-z0-9]{4,100}$/i);
+ 		return pattern.test(user_name);
+	}
 function isValidEmailAddress(emailAddress) {
  		var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
  		return pattern.test(emailAddress);

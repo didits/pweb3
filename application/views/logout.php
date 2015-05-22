@@ -26,32 +26,29 @@ border-bottom:#666 1px dashed;
 	<div class="topline margin-bottom" style="margin:10px">
 		<div class="s-12 l-4 center" style="border:#666 1px solid; padding:5px">
 		
-			<form class="customform" action="<?php echo base_url()?>user/login_submit" method="post">
+			<div class="customform">
 			
 					<div class="box">
 						<div id="id">
-						<h1>&nbsp</h1>
+						<h1 align="center">
+						<i class="icon-check icon3x" style="color:#390"></i>
+						</h1>
 							<h2>
 								<center>
-									Login
+									Kamu Sekarang Logout!
 								</center>
 							</h2>
-							<h1>&nbsp</h1>
-							<h3>Username</h3>
-							<input name="user_name" title="Username" placeholder="" type="text" required/>
-							<h3>Password</h3>
-							<input name="pass" title="Password" placeholder="" type="password" />
 						</div>
 						</div>
 					<div class="box">
 					<div class="s-12 l-6"> </div>
 					<div class="s-12 l-4 center">
 						<div class="box">
-							<button type="submit" style="background-color:#06F">Login</button>
+							<a href="<?php echo base_url()?>user/login"><button style="background-color:#06F" class="buttons">Login</button></a>
 							</div>
 					</div>
 					</div>
-			</form>
+			</div>
 		</div>
 	</div>
 	<br>
