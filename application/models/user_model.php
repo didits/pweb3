@@ -53,5 +53,10 @@ class User_model extends CI_Model {
             return false;
         }
     }
+	
+	public function show_berita(){
+	$query = $this->db->get('posting');
+	return $query;
+}
 }
 ?>
