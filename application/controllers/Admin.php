@@ -2,10 +2,17 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
-	
+
 		function __construct() {
         parent::__construct();
+<<<<<<< HEAD
         $this->load->model('insert_model');
+=======
+		$this->load->model('admin_model');
+        if($this->session->userdata('role')!="2"){
+		redirect('/user/login', 'refresh');
+		}
+>>>>>>> 6540d2c990c4e95eb1ab1eed56e61313bbc5533d
        }
 	
 	public function index()
@@ -19,7 +26,16 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/head');
 		$this->load->view('admin/nav');
-		$this->load->view('admin/berita');
+		$this->load->view('admin/berita', array('error' => ' ' ));
+	}
+	
+	
+	public function edit_berita()
+	{
+		$data['h'] = $this->admin_model->show_edit_berita();
+		$this->load->view('admin/head');
+		$this->load->view('admin/nav');
+		$this->load->view('admin/edit_berita', $data);
 	}
 	
 	public function submit_fp()
@@ -46,5 +62,15 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/footer');
 		}
 		
-		
+		    public function submit_isi()
+    		{
+			//$datestring = "Year: %Y Month: %m Day: %d - %h:%i %a";
+			//$time = time();
+			//$tanggal = mdate($datestring, $time);
+			//$judul=$this->input->post('judul');
+			//$deskripsi=$this->input->post('deskripsi');	
+			
+		    $this->admin_model->onclic();
+    		}
+				
 }

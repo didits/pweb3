@@ -1,19 +1,55 @@
 <?php
 
-class insert_model extends CI_Model{
+class Admin_model extends CI_Model{
     function __construct() {
         parent::__construct();
+		$this->load->helper('date');
         $this->load->database('default','true');
     }
-    
-public function inpres($tanggal_post,$id_prestasi,$nama_prestasi,$deskripsi,$tahun,$bidang,$tingkat,$peringkat,$dokumentasi)
-{
-    $this->db->query("insert into prestasi(tanggal_post,id_prestasi,nama_prestasi,deskripsi,tahun,bidang,tingkat,peringkat,dokumentasi)values(now(),'$id_prestasi','$nama_prestasi','$deskripsi','$tahun','$bidang','$tingkat','$peringkat','$dokumentasi')");
-}
+	
+    public function onclic()
+    {
+		
+		$id=$this->db->query("select fn_last_posting()");
+		 		$config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'gif|jpg|png';
+				$config['file_name']            = '$id';
+                $config['max_size']             = 100;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 768;
 
-public function infp($judul,$nrp1,$nrp2,$nrp3,$nrp4,$nrp5,$nrp6,$deskripsi,$semester,$nip,$matkul,$screenshot,$video,$demo)
-{
-	$this->db->query("CALL SP_INSERT_FP('$judul','$nrp1','$nrp2','$nrp3','$nrp4','$nrp5','$nrp6','$deskripsi','$semester','$nip','$matkul','$screenshot','$video','$demo')");
-}
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload())
+                {
+                        $error = array('error' => $this->upload->display_errors());
+						$this->load->view('admin/head');
+						$this->load->view('admin/nav');
+						$this->load->view('admin/berita',$error);
+                }
+                else
+                {
+						$error = array('error' => 'Sukses');
+						$this->load->view('admin/head');
+						$this->load->view('admin/nav');
+						$this->load->view('admin/berita',$error);
+						
+                        $data = array('upload_data' => $this->upload->data());
+						
+                        //$this->load->view('upload_success', $data);
+                }
+		
+		$judul=$this->input->post('judul');
+		$isi=$this->input->post('isi');
+		$user=$this->session->userdata('username');
+		$tipe_posting=1;
+		$query = $this->db->query("call insert_berita('$judul', '$user', '$isi', '$tipe_posting')");
+    }
+	
+	public function show_edit_berita()  
+      {   
+         $query = $this->db->get('posting');  
+         return $query;  
+      }
 }
 ?>

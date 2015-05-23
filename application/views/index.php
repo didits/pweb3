@@ -7,38 +7,46 @@
 </div>
 <!-- END OF CAROUSEL -->
 <!-- section 1 -->
+<?php  
+         foreach ($h->result() as $row)  
+         {  
+            ?>
+			<?php if(($row->id_posting%2)==1)
+			{
+				?>
 <div class="marg line">
 	<div class="s-12 l-6">
-		<div class="box news" style="background-image:url(<?php echo base_url(); ?>assets/gambar_home/freetown.jpg);">
+		<div class="box news" style="background-image:url(<?php echo base_url(); ?>uploads/<?php echo $row->id_posting;?>.jpg);">
 		</div>
 	</div>
 	<div class="s-12 l-6">
 		<div class="box news">
-		<h2 style="font-style:italic; font-weight:900"><span class="awal-judul"></span>Kemiskinan di Afrika</h2>
-		<span class="span"><i class="icon-user"></i> Didit</span><span class="span"><i class="icon-calendar"></i> 13-12-2014</span>
+		<h2 style="font-style:italic; font-weight:900"><span class="awal-judul"></span><?php echo $row->judul;?></h2>
+		<span class="span"><i class="icon-user"></i> <?php echo $row->user;?></span><span class="span"><i class="icon-calendar"></i>    <?php echo $row->tanggal;?></span>
 		<div class="divider"></div>
-			<p><div class="awal-paragraf"></div>Kemiskinan merupakan suatu keadaan ketidakmampuan untuk memenuhi kebutuhan dasar seperti makanan, pakaian, tempat berlindung, pendidikan, dan kesehatan. Kemiskinan dapat disebabkan oleh ketidakadaan kebutuhan dasar, ataupun sulitnya akses terhadap pendidikan dan pekerjaan. Hal ini sudahlah menjadi sebuah masalah yang menyelimuti berbagai jenis orang dalam pelosok dunia. </p>
-			<p><div class="awal-paragraf"></div>Kemiskinan itu tersendiri terbagi menjadi dua kategori; “sangat miskin” dan “miskin”. Orang-orang yang berada pada kategori “miskin” dan “sangat miskin” hanya mendapatkan pendapatan kurang dari AS$1 per hari dan kurang dari AS$2 per hari.  Berdasarkan standar tersebut, 21% dari warga dunia berada pada kategori “sangat miskin” dan masih lebih dari setengah penduduk dunia berada pada kategori “miskin”....</p>
+			<p><div class="awal-paragraf"></div><?php echo $row->isi;?></p>
 		</div>
+		<span class="span_link"><a href="<?php echo base_url();?>halaman/berita/<?php echo $row->id_posting;?>">Read more ...</a></span>
 	</div>
 </div>
-<!-- section 2 -->
+<?php } else {?>
 <div class="marg line">
 	<div class="s-12 l-6">
-		<div class="box news">
-		<h2 style="font-style:italic; font-weight:900"><span class="awal-judul"></span>Kemiskinan di Afrika</h2>
-		<span class="span"><i class="icon-user"></i> Didit</span><span class="span"><i class="icon-calendar"></i> 13-12-2014</span>
+	<div class="box news">
+		<h2 style="font-style:italic; font-weight:900"><span class="awal-judul"></span><?php echo $row->judul;?></h2>
+		<span class="span"><i class="icon-user"></i> <?php echo $row->user;?></span><span class="span"><i class="icon-calendar"></i>      <?php echo $row->tanggal;?></span>
 		<div class="divider"></div>
-			<p><div class="awal-paragraf"></div>Kemiskinan merupakan suatu keadaan ketidakmampuan untuk memenuhi kebutuhan dasar seperti makanan, pakaian, tempat berlindung, pendidikan, dan kesehatan. Kemiskinan dapat disebabkan oleh ketidakadaan kebutuhan dasar, ataupun sulitnya akses terhadap pendidikan dan pekerjaan. Hal ini sudahlah menjadi sebuah masalah yang menyelimuti berbagai jenis orang dalam pelosok dunia. </p>
-			<p><div class="awal-paragraf"></div>Kemiskinan itu tersendiri terbagi menjadi dua kategori; “sangat miskin” dan “miskin”. Orang-orang yang berada pada kategori “miskin” dan “sangat miskin” hanya mendapatkan pendapatan kurang dari AS$1 per hari dan kurang dari AS$2 per hari.  Berdasarkan standar tersebut, 21% dari warga dunia berada pada kategori “sangat miskin” dan masih lebih dari setengah penduduk dunia berada pada kategori “miskin”....</p>
+			<p><div class="awal-paragraf"></div><?php echo $row->isi;?></p>
 		</div>
+		<span class="span_link"><a href="<?php echo base_url();?>halaman/berita/<?php echo $row->id_posting;?>">Read more ...</a></span>
 	</div>
 	<div class="s-12 l-6">
-		<div class="box news" style="background-image:url(<?php echo base_url(); ?>assets/img/940x380.jpg);">
-			
+		<div class="box news" style="background-image:url(<?php echo base_url(); ?>uploads/<?php echo $row->id_posting;?>.jpg);">
 		</div>
 	</div>
 </div>
+<?php }}
+									?>
 <div class="line">
 	<div class="box" style="height:300px; background-color:#37001C; margin-bottom:-10px">
 	</div>

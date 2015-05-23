@@ -29,22 +29,20 @@
                             Tambah Berita
                         </h1>
 
-                        <form role="form">
-
+                        <form role="form" action="<?php echo base_url();?>admin/submit_isi" method="post" enctype="multipart/form-data">
+							<?php echo $error;?>
                             <div class="form-group">
                                 <label>Judul</label>
-                                <input class="form-control">
-                                <p class="help-block">Example block-level help text here.</p>
+                                <input class="form-control" name="judul">
                             </div>
 							
 							<div class="form-group">
                                 <label>Isi</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" rows="3" name="isi"></textarea>
                             </div>
-							
 							<div class="form-group">
                                 <label>Gambar</label>
-                                <input type="file">
+                                <input type="file" name="userfile" size="20">
                             </div>
 
                             <button type="submit" class="btn btn-default">Submit Button</button>
