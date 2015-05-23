@@ -5,10 +5,14 @@ class Admin extends CI_Controller {
 
 		function __construct() {
         parent::__construct();
+<<<<<<< HEAD
+        $this->load->model('insert_model');
+=======
 		$this->load->model('admin_model');
         if($this->session->userdata('role')!="2"){
 		redirect('/user/login', 'refresh');
 		}
+>>>>>>> 6540d2c990c4e95eb1ab1eed56e61313bbc5533d
        }
 	
 	public function index()
