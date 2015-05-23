@@ -58,5 +58,11 @@ class User_model extends CI_Model {
 		$query = $this->db->query("call show_berita('$paging')");
 		return $query;
 }
+
+	public function halaman_berita($paging){
+		$this->db->where("id_posting",$paging);
+        $query=$this->db->get("posting");
+		return $query;
+}
 }
 ?>

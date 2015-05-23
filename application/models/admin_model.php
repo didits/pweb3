@@ -9,16 +9,6 @@ class Admin_model extends CI_Model{
 	
     public function onclic()
     {
-		/*$datestring = "Year: %Y Month: %m Day: %d - %h:%i %a";
-		$time = time();
-		$tanggal = mdate($datestring, $time);
-		$data=array(
-			'judul'=>$this->input->post('judul'),
-			'isi'=>$this->input->post('isi'),
-			'tanggal'=>mdate($datestring, $time),
-			'user'=>$this->session->userdata('username')
-			);
-		$this->db->insert('posting',$data);*/
 		
 		$id=$this->db->query("select fn_last_posting()");
 		 		$config['upload_path']          = './uploads/';
@@ -55,5 +45,11 @@ class Admin_model extends CI_Model{
 		$tipe_posting=1;
 		$query = $this->db->query("call insert_berita('$judul', '$user', '$isi', '$tipe_posting')");
     }
+	
+	public function show_edit_berita()  
+      {   
+         $query = $this->db->get('posting');  
+         return $query;  
+      }
 }
 ?>

@@ -10,6 +10,13 @@ h2 {
 	color:#999;
 	font-size:12px;
 }
+.span_link{
+	margin-left:50px;
+	font-style:italic;
+	font-weight:700;
+	color:#999;
+}
+
 .awal-paragraf{
 	width:40px;
 	display:block;

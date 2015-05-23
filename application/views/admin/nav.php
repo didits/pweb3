@@ -37,7 +37,7 @@
                                 <a href="<?php echo base_url();?>admin/tambah_berita">Tambah Berita</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url();?>admin/berita">Edit Berita</a>
+                                <a href="<?php echo base_url();?>admin/edit_berita">Edit Berita</a>
                             </li>
                         </ul>
                     </li>
@@ -48,7 +48,7 @@
                                 <a href="<?php echo base_url();?>admin/tambah_berita">Tambah Berita</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url();?>admin/berita">Edit Berita</a>
+                                <a href="<?php echo base_url();?>admin/edit_berita">Edit Berita</a>
                             </li>
                         </ul>
                     </li>

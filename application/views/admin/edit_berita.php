@@ -24,30 +24,34 @@
                     <div class="col-lg-12">
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover">
+							
                                 <thead>
                                     <tr>
-                                        <th>Nama Tim</th>
-                                        <th>Email Ketua</th>
-                                        <th>Asal Sekolah</th>
-										<th>HP Ketua</th>
-										<th>Anggota 1</th>
-										<th>Anggota 2</th>
-										<th>Bukti</th>
-										<th>Edit</th>
+                                        <th>Id</th>
+                                        <th>Judul</th>
+                                        <th>User</th>
+										<th>Isi</th>
+										<th>Tanggal</th>
+										<th>Tipe</th>
                                     </tr>
                                 </thead>
+								<?php  
+         foreach ($h->result() as $row)  
+         {  
+            ?>
                                 <tbody>
                                     <tr>
-                                        <td>12345678901234567890</td>
-                                        <td>sepiyantodidit@gmail.com</td>
-                                        <td>Sma taruna DRA.ZULAEHA</td>
-                                        <td>085746692273</td>
-                                        <td>085746692273</td>
-                                        <td>085746692273</td>
-                                        <td>link</td>
+                                        <td><?php echo $row->id_posting;?></td>
+										<td><?php echo $row->user;?></td>
+                                        <td><?php echo $row->judul;?></td>
+                                        <td><?php echo $row->isi;?></td>
+                                        <td><?php echo $row->tanggal;?></td>
+                                        <td><?php echo $row->tipe_posting;?></td>
 										<td><button type="button" class="btn btn-xs btn-success">Edit</button></td>
                                     </tr>
                                 </tbody>
+								<?php }
+									?>
                             </table>
                         </div>
                     </div>

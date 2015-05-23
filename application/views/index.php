@@ -26,6 +26,7 @@
 		<div class="divider"></div>
 			<p><div class="awal-paragraf"></div><?php echo $row->isi;?></p>
 		</div>
+		<span class="span_link"><a href="<?php echo base_url();?>halaman/berita/<?php echo $row->id_posting;?>">Read more ...</a></span>
 	</div>
 </div>
 <?php } else {?>
@@ -37,7 +38,7 @@
 		<div class="divider"></div>
 			<p><div class="awal-paragraf"></div><?php echo $row->isi;?></p>
 		</div>
-		
+		<span class="span_link"><a href="<?php echo base_url();?>halaman/berita/<?php echo $row->id_posting;?>">Read more ...</a></span>
 	</div>
 	<div class="s-12 l-6">
 		<div class="box news" style="background-image:url(<?php echo base_url(); ?>uploads/<?php echo $row->id_posting;?>.jpg);">

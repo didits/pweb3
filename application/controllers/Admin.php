@@ -25,11 +25,13 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/berita', array('error' => ' ' ));
 	}
 	
+	
 	public function edit_berita()
 	{
+		$data['h'] = $this->admin_model->show_edit_berita();
 		$this->load->view('admin/head');
 		$this->load->view('admin/nav');
-		$this->load->view('admin/edit_berita', array('error' => ' ' ));
+		$this->load->view('admin/edit_berita', $data);
 	}
 	
 	public function submit_fp()
