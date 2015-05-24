@@ -25,8 +25,8 @@
 		<span class="span"><i class="icon-user"></i> <?php echo $row->user;?></span><span class="span"><i class="icon-calendar"></i>    <?php echo $row->tanggal;?></span>
 		<div class="divider"></div>
 			<p><div class="awal-paragraf"></div><?php echo $row->isi;?></p>
+			<span class="span_link"><a href="<?php echo base_url();?>halaman/berita/<?php echo $row->id_posting;?>">Read more ...</a></span>
 		</div>
-		<span class="span_link"><a href="<?php echo base_url();?>halaman/berita/<?php echo $row->id_posting;?>">Read more ...</a></span>
 	</div>
 </div>
 <?php } else {?>
@@ -37,8 +37,8 @@
 		<span class="span"><i class="icon-user"></i> <?php echo $row->user;?></span><span class="span"><i class="icon-calendar"></i>      <?php echo $row->tanggal;?></span>
 		<div class="divider"></div>
 			<p><div class="awal-paragraf"></div><?php echo $row->isi;?></p>
+			<span class="span_link"><a href="<?php echo base_url();?>halaman/berita/<?php echo $row->id_posting;?>">Read more ...</a></span>
 		</div>
-		<span class="span_link"><a href="<?php echo base_url();?>halaman/berita/<?php echo $row->id_posting;?>">Read more ...</a></span>
 	</div>
 	<div class="s-12 l-6">
 		<div class="box news" style="background-image:url(<?php echo base_url(); ?>uploads/<?php echo $row->id_posting;?>.jpg);">
@@ -47,11 +47,40 @@
 </div>
 <?php }}
 									?>
-<div class="line">
-	<div class="box" style="height:300px; background-color:#37001C; margin-bottom:-10px">
-	</div>
-	<div class="box" style="height:20px; background-color:#201; margin-bottom:-15px">
-	</div>
+									<div class="s-12 l-2 center">
+									<br />
+									<a href="<?php echo base_url();?>welcome/home/<?php print_r($c); ?>">
+									<button style=" width: 100%;
+ background: none repeat scroll 0 0 #444444;
+ border: 0 none;
+ color: #FFFFFF;
+ height: 2.7em;
+ padding: 0.625em;
+ cursor:pointer;
+ width: 100px;
+ transition: background 0.20s linear 0s;
+ -o-transition: background 0.20s linear 0s;
+ -ms-transition: background 0.20s linear 0s;
+ -moz-transition: background 0.20s linear 0s;
+ -webkit-transition: background 0.20s linear 0s;">Back</button>
+ </a>
+ 
+ <a href="<?php echo base_url();?>welcome/home/<?php print_r($b); ?>">
+ <button style=" width: 100%;
+ background: none repeat scroll 0 0 #444444;
+ border: 0 none;
+ color: #FFFFFF;
+ height: 2.7em;
+ padding: 0.625em;
+ cursor:pointer;
+ width: 100px;
+ transition: background 0.20s linear 0s;
+ -o-transition: background 0.20s linear 0s;
+ -ms-transition: background 0.20s linear 0s;
+ -moz-transition: background 0.20s linear 0s;
+ -webkit-transition: background 0.20s linear 0s;">Next</button></a><br />
+
+<br />
 </div>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/owl-carousel/owl.carousel.js"></script> 
 <script type="text/javascript">

@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Pendaftar Belum Terverifikasi
+                            Edit Berita
                         </h1>
                         <ol class="breadcrumb">
                             <li>
@@ -33,6 +33,7 @@
 										<th>Isi</th>
 										<th>Tanggal</th>
 										<th>Tipe</th>
+										<th>Edit</th>
                                     </tr>
                                 </thead>
 								<?php  
@@ -47,7 +48,7 @@
                                         <td><?php echo $row->isi;?></td>
                                         <td><?php echo $row->tanggal;?></td>
                                         <td><?php echo $row->tipe_posting;?></td>
-										<td><button type="button" class="btn btn-xs btn-success">Edit</button></td>
+										<td><a href="<?php echo base_url();?>admin/edit_berita_/<?php echo $row->id_posting;?>"><button type="button" class="btn btn-xs btn-success">Edit</button></a></td>
                                     </tr>
                                 </tbody>
 								<?php }
