@@ -147,4 +147,10 @@ class User extends CI_Controller {
 		$this->load->view('LOGOUT');
 		$this->load->view('footer');
 	}
+    
+    public function forumnya()
+    {
+            
+        $this->load->view('forum_view');
+    }
 }

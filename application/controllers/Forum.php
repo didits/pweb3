@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dddonasi extends CI_Controller {
+class Forum extends CI_Controller {
 	function __construct() {
         parent::__construct();
-        $this->load->model('donasi_model');
+        $this->load->model('forum_model');
     }
 	public function index()
 	{
@@ -13,14 +13,18 @@ class Dddonasi extends CI_Controller {
 		$data['status']='LOGIN';
 		}else 
 		$data['status']='LOGOUT';
-		$datas=array(
-		'h' => $this->donasi_model->list_donasi(),
-		);
-		$this->load->view('header');
-		$this->load->view('nav', $data);
-		$this->load->view('donasi', $datas);
-		$this->load->view('footer');
-	}
+        if($this->session->userdata('role')=="2") redirect('/admin', 'refresh');
+		else 
+        {
+            $datas=array(
+            'h' => $this->forum_model->list_forum(),
+            );
+            $this->load->view('header');
+            $this->load->view('nav', $data);
+            $this->load->view('forum_view_coba');
+            $this->load->view('footer');            
+        }
+    }
 	
 	public function form_donasi($id)
 	{

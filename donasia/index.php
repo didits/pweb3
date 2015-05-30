@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+error_reporting(0);
 ob_start();
 session_start();
 include "connect.php";
@@ -46,11 +47,12 @@ $actions_array = array('forum','create','topic','reply','mod');
                <p class="nav-text">Custom menu text</p>
                <div class="top-nav s-12 l-10">
                   <ul>
-                     <li><a>Home</a></li>
-                     <li><a href="forum.php">Forum</a>
-                     </li>
-                     <li><a>Company</a></li>
-                     <li><a>Contact</a></li>
+                     <li><a href="http://localhost/openeye/welcome"><i class="icon-home"></i> HOME</a></li>
+					<li><a href="http://localhost/openeye/donasi"><i class="icon-heart"></i> DONASI</a></li>
+					<li><a href="http://localhost/openeye/Forum"><i class="icon-discussion"></i> FORUM</a></li>
+					<li><a href="http://localhost/openeye/user/signup"><i class="icon-new_user"></i> SIGN UP</a></li>
+					<li><a href="http://localhost/openeye/user/LOGOUT"><i class="icon-signin"></i> LOGOUT</a></li>
+
                   </ul>
                </div>
                <div class=" hide-s l-2">
@@ -75,9 +77,9 @@ $actions_array = array('forum','create','topic','reply','mod');
                             echo "Please <a href=\"./login.php\">Login</a> to your account, or <a href=\"./register.php\">Register</a> a new account!\n";
                         }else {
                             $row = mysql_fetch_assoc($res);
-                            echo "Welcome back, <a href=\"./forum.php?act=profile&id=".$row['id']."\">".$row['username']."</a>! <a href=\"./logout.php\" onClick=\"return confirmLogout()\">Logout</a>\n";
+                            echo "Welcome back, <a href=\"./index.php?act=profile&id=".$row['id']."\">".$row['username']."</a>! <a href=\"./logout.php\" onClick=\"return confirmLogout()\">Logout</a>\n";
                             echo "<br>\n";
-                            echo "<a href=\"./forum.php\">Forum forum</a>\n";
+                            echo "<a href=\"./index.php\">Forum forum</a>\n";
                             if($row['admin'] == '1'){
                                 echo " | <a href=\"./admin.php\">Administrative Section</a>\n";
                             }
@@ -110,7 +112,7 @@ $actions_array = array('forum','create','topic','reply','mod');
                         
                         while($row3 = mysql_fetch_assoc($res2)){
                             echo "    <div id=\"content\">\n";
-                            echo "    <a href=\"./forum.php?act=forum&id=".$row3['id']."\">".$row3['name']."</a><br>\n";
+                            echo "    <a href=\"./index.php?act=forum&id=".$row3['id']."\">".$row3['name']."</a><br>\n";
                             echo "    " . $row3['desc'] . "\n";
                             echo "    </div>\n";
                         }
@@ -120,7 +122,7 @@ $actions_array = array('forum','create','topic','reply','mod');
                     }
                 }else {
                     if($action == 'forum'){
-                        include "./includes/forum.php";
+                        include "./includes/index.php";
                     }
                     
                     if($action == 'create'){
@@ -159,16 +161,19 @@ $actions_array = array('forum','create','topic','reply','mod');
         </div>
       </section>
       <!-- FOOTER -->
-      <footer class="line">
-         <div class="box">
-            <div class="s-12 l-6">
-               <p>Copyright 2015, Vision Design - graphic zoo</p>
-            </div>
-            <div class="s-12 l-6">
-               <a class="right" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Design and coding by Responsee Team</a>
-            </div>
-         </div>
-      </footer>
+      <div class="line">
+	<div class="box" style="height:250px; background-color:#37001C; margin-bottom:-10px">
+	<br />
+	<br />
+	<div class="s-12 l-4 center">
+	<img src="<?php echo base_url();?>assets/img/logoo.png" />
+	</div>
+	</div>
+	<div class="box" style="height:20px; background-color:#201; margin-bottom:-15px">
+	</div>
+</div>
+</body>
+</html>
       <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>  
       <script type="text/javascript">
          jQuery(document).ready(function($) {     

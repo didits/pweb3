@@ -78,7 +78,7 @@ class Admin extends CI_Controller {
     public function edit_thread()
     {
         //ambil semua thread dari database
-        $data['e_thread'] = $this->admin_model->show_edit_thread()
+        $data['e_thread'] = $this->admin_model->show_edit_thread();
         //buka halaman edit thread
         $this->load->view('admin/head');
 		$this->load->view('admin/nav');
