@@ -63,6 +63,34 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/nav');
 		$this->load->view('admin/konfirm_tambah_thread_v', $data);
 	}
+    
+    //edit thread yang sudah ada
+    public function edit_thread()
+    {
+        //ambil semua thread dari database
+        $data['e_thread'] = $this->admin_model->show_edit_thread()
+        //buka halaman edit thread
+        $this->load->view('admin/head');
+		$this->load->view('admin/nav');
+        $this->load->view('admin/edit_thread_v');
+    }
+    
+    public function proses_edit_thread()
+	{
+        //menerima input
+        $judul=$this->input->post('judul');
+        $u_name=$this->input->post('u_name');
+        $isi=$this->input->post('isi');
+        $tipe=$this->input->post('tipe');
+        
+        //load ke model
+        $this->admin_model>tambah_thread($judul, $u_name, $isi, $tipe);
+        
+        //load model konfirmasi
+		$this->load->view('admin/head');
+		$this->load->view('admin/nav');
+		$this->load->view('admin/konfirm_tambah_thread_v', $data);
+	}
 	
 	public function submit_fp()
 		{
