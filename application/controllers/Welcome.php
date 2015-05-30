@@ -11,9 +11,9 @@ class Welcome extends CI_Controller {
 	{
 		$data['status']='';
 		if($this->session->userdata('logged_in')==""){
-		$data['status']='login';
+		$data['status']='LOGIN';
 		}else 
-		$data['status']='logout';
+		$data['status']='LOGOUT';
 		$datas=array(
 		'h' => $this->user_model->show_berita(1),
 		'b'=> 2,
@@ -27,9 +27,9 @@ class Welcome extends CI_Controller {
 	{
 		$data['status']='';
 		if($this->session->userdata('logged_in')==""){
-		$data['status']='login';
+		$data['status']='LOGIN';
 		}else 
-		$data['status']='logout';
+		$data['status']='LOGOUT';
 		$datas=array(
 		'h' => $this->user_model->show_berita($f),
 		'b'=> $f +1,

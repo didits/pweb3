@@ -63,6 +63,14 @@
                             </li>
                         </ul>
                     </li>
+					<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo3">Donasi <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo3" class="collapse">
+                            <li>
+                                <a href="<?php echo base_url();?>admin/tambah_donasi">Tambah Donasi</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
