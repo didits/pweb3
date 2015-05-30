@@ -61,5 +61,11 @@ class Admin_model extends CI_Model{
       {   
          $this->db->query("CALL SP_INSERT_THREAD('$judul','$u_name', '$isi', '$tipe')");  
       }
+    
+    public function show_edit_thread()
+    {
+        $query = $this->db->get('posting');
+        return $query;
+    }
 }
 ?>

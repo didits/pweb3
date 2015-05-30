@@ -38,6 +38,7 @@ body {
     z-index: 5;
 }
 
+
 .overlay 
 {
   position: fixed;
@@ -88,12 +89,21 @@ body {
 }
 .popup .close:hover 
 {
-  color: #06D85F;
+  color: indianred;
 }
+
 .popup .content 
 {
   max-height: 30%;
   overflow: auto;
+}
+.popup a
+{
+    font-weight: bold;
+}
+.popup a:hover
+{
+    color: indianred;
 }
 
 @media screen and (max-width: 700px)
@@ -105,6 +115,22 @@ body {
     width: 70%;
   }
 }
+.donate:hover
+{
+    color: indianred;
+}
+    
+.menu-img
+{
+    height: 251px;
+    background-color: black;
+}
+.menu-img img:hover
+{
+    opacity: 0.3;
+    transition: opacity 500ms;
+}
+   
    
 </style>
 </head>

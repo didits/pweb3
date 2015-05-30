@@ -12,12 +12,12 @@ class User extends CI_Controller {
 	{
 		$data['status']='';
 		if($this->session->userdata('logged_in')==""){
-		$data['status']='login';
+		$data['status']='LOGIN';
 		}else 
-		$data['status']='logout';
+		$data['status']='LOGOUT';
 		$this->load->view('header');
 		$this->load->view('nav', $data);
-		$this->load->view('login');
+		$this->load->view('LOGIN');
 		$this->load->view('footer');
 	}
 	
@@ -25,34 +25,34 @@ class User extends CI_Controller {
 	{
 		$data['status']='';
 		if($this->session->userdata('logged_in')==""){
-		$data['status']='login';
+		$data['status']='LOGIN';
 		}else 
-		$data['status']='logout';
+		$data['status']='LOGOUT';
 		$this->load->view('header');
 		$this->load->view('nav', $data);
 		$this->load->view('thank');
 		$this->load->view('footer');
 	}
 	
-	public function login()
+	public function LOGIN()
 	{
 		$data['status']='';
 		if($this->session->userdata('logged_in')==""){
-		$data['status']='login';
+		$data['status']='LOGIN';
 		}else 
-		$data['status']='logout';
+		$data['status']='LOGOUT';
 		$this->load->view('header');
 		$this->load->view('nav', $data);
-		$this->load->view('login');
+		$this->load->view('LOGIN');
 		$this->load->view('footer');
 	}
 	
-	public function login_submit()
+	public function LOGIN_submit()
 	{
 		$user=$this->input->post('user_name');
 		$password=md5($this->input->post('pass'));
 
-		$result=$this->user_model->login($user,$password);
+		$result=$this->user_model->LOGIN($user,$password);
 		if($result && $this->session->userdata('role')=="2") redirect('/admin', 'refresh');
 		else  
 		if($result && $this->session->userdata('role')=="1") redirect('/welcome', 'refresh');
@@ -63,9 +63,9 @@ class User extends CI_Controller {
 	{
 		$data['status']='';
 		if($this->session->userdata('logged_in')==""){
-		$data['status']='login';
+		$data['status']='LOGIN';
 		}else 
-		$data['status']='logout';
+		$data['status']='LOGOUT';
 		$this->load->view('header');
 		$this->load->view('nav', $data);
 		$this->load->view('signup');
@@ -122,7 +122,7 @@ class User extends CI_Controller {
         }
 	}
 	
-	public function logout()
+	public function LOGOUT()
 	{
 		$newdata = array(
 		'username'   =>'',
@@ -132,19 +132,19 @@ class User extends CI_Controller {
 		);
 		$this->session->unset_userdata($newdata);
 		$this->session->sess_destroy();
-		$this->logout_sukses();
+		$this->LOGOUT_sukses();
 	}
 	
-	public function logout_sukses()
+	public function LOGOUT_sukses()
 	{
 		$data['status']='';
 		if($this->session->userdata('logged_in')==""){
-		$data['status']='login';
+		$data['status']='LOGIN';
 		}else 
-		$data['status']='logout';
+		$data['status']='LOGOUT';
 		$this->load->view('header');
 		$this->load->view('nav', $data);
-		$this->load->view('logout');
+		$this->load->view('LOGOUT');
 		$this->load->view('footer');
 	}
 }
