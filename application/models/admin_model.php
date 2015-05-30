@@ -9,11 +9,10 @@ class Admin_model extends CI_Model{
 	
     public function onclic()
     {
-		
-		$id=$this->db->query("select fn_last_posting()");
+				$id=$this->db->query("select fn_last_posting()");
 		 		$config['upload_path']          = './uploads/';
-                $config['allowed_types']        = 'gif|jpg|png';
-				$config['file_name']            = '$id';
+                $config['allowed_types']        = 'jpg';
+				$config['file_name']            = $id;
                 $config['max_size']             = 100;
                 $config['max_width']            = 1024;
                 $config['max_height']           = 768;
@@ -35,19 +34,25 @@ class Admin_model extends CI_Model{
 						$this->load->view('admin/berita',$error);
 						
                         $data = array('upload_data' => $this->upload->data());
+						$judul=$this->input->post('judul');
+						$isi=$this->input->post('isi');
+						$user=$this->session->userdata('username');
+						$tipe_posting=1;
+						$query = $this->db->query("call insert_berita('$judul', '$user', '$isi', '$tipe_posting')");
 						
                         //$this->load->view('upload_success', $data);
                 }
 		
-		$judul=$this->input->post('judul');
-		$isi=$this->input->post('isi');
-		$user=$this->session->userdata('username');
-		$tipe_posting=1;
-		$query = $this->db->query("call insert_berita('$judul', '$user', '$isi', '$tipe_posting')");
     }
 	
-	public function show_edit_berita()  
+		public function show_edit_berita()  
       {   
+         $query = $this->db->get('posting');  
+         return $query;  
+      }
+	  public function show_edit_berita_($id)  
+      {   
+	  	$this->db->where("id_posting",$id);
          $query = $this->db->get('posting');  
          return $query;  
       }

@@ -11,13 +11,34 @@ class Welcome extends CI_Controller {
 	{
 		$data['status']='';
 		if($this->session->userdata('logged_in')==""){
-		$data['status']='login';
+		$data['status']='LOGIN';
 		}else 
-		$data['status']='logout';
-		$datas['h'] = $this->user_model->show_berita(1);
+		$data['status']='LOGOUT';
+		$datas=array(
+		'h' => $this->user_model->show_berita(1),
+		'b'=> 2,
+		'c'=>0		);
 		$this->load->view('header');
 		$this->load->view('nav', $data);
 		$this->load->view('index', $datas);
+		$this->load->view('footer');
+	}
+	public function home($f)
+	{
+		$data['status']='';
+		if($this->session->userdata('logged_in')==""){
+		$data['status']='LOGIN';
+		}else 
+		$data['status']='LOGOUT';
+		$datas=array(
+		'h' => $this->user_model->show_berita($f),
+		'b'=> $f +1,
+		'c'=>$f - 1
+		);
+		$this->load->view('header');
+		$this->load->view('nav', $data);
+		$this->load->view('index', $datas);
+		$this->load->view('footer');
 	}
 	
 }

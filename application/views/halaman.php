@@ -5,7 +5,7 @@
          {  
             ?>
 	<div class="s-12 l-12">
-		<div class="box news" style="background-image:url(<?php echo base_url(); ?>assets/gambar_home/<?php echo $row->id_posting;?>.jpg);">
+		<div class="box news" style="background-image:url(<?php echo base_url(); ?>uploads/<?php echo $row->id_posting;?>.jpg);">
 		</div>
 	</div>
 	<div class="s-12 l-9">

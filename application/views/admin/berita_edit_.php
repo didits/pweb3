@@ -13,7 +13,7 @@
                                 <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-edit"></i> Tambah Berita
+                                <i class="fa fa-edit"></i> Edit Berita
                             </li>
                         </ol>
                     </div>
@@ -28,17 +28,20 @@
 						<h1>
                             Tambah Berita
                         </h1>
-
+<?php  
+         foreach ($h->result() as $row)  
+         {  
+            ?>
                         <form role="form" action="<?php echo base_url();?>admin/submit_isi" method="post" enctype="multipart/form-data">
 							<?php echo "<font color='red'>$error</font>";?>
                             <div class="form-group">
                                 <label>Judul</label>
-                                <input class="form-control" name="judul">
+                                <input class="form-control" name="judul" value="<?php echo $row->judul;?>">
                             </div>
 							
 							<div class="form-group">
                                 <label>Isi</label>
-                                <textarea class="form-control" rows="3" name="isi"></textarea>
+                                <textarea class="form-control" rows="3" name="isi" ><?php echo $row->isi;?></textarea>
                             </div>
 							<div class="form-group">
                                 <label>Gambar</label>
@@ -46,10 +49,10 @@
                             </div>
 
                             <button type="submit" class="btn btn-default">Submit</button>
-                            <button type="reset" class="btn btn-default">Reset</button>
 
                         </form>
-
+<?php }
+									?>
                     </div>
                 </div>
                 <!-- /.row -->

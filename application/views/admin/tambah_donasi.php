@@ -6,14 +6,14 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Berita
+                            Donasi
                         </h1>
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-edit"></i> Tambah Berita
+                                <i class="fa fa-edit"></i> Tambah List Donasi
                             </li>
                         </ol>
                     </div>
@@ -26,19 +26,19 @@
                     <div class="col-lg-6">
 					
 						<h1>
-                            Tambah Berita
+                            Tambah List Donasi
                         </h1>
 
                         <form role="form" action="<?php echo base_url();?>admin/submit_isi" method="post" enctype="multipart/form-data">
 							<?php echo "<font color='red'>$error</font>";?>
                             <div class="form-group">
-                                <label>Judul</label>
-                                <input class="form-control" name="judul">
+                                <label>Nama Donasi</label>
+                                <input class="form-control" name="nama">
                             </div>
 							
 							<div class="form-group">
-                                <label>Isi</label>
-                                <textarea class="form-control" rows="3" name="isi"></textarea>
+                                <label>Deskripsi</label>
+                                <textarea class="form-control" rows="3" name="deskripsi"></textarea>
                             </div>
 							<div class="form-group">
                                 <label>Gambar</label>
